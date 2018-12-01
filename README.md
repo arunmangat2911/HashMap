@@ -1,6 +1,7 @@
 # HashMap
 
 
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -12,6 +13,7 @@ public class HMap {
         hmap.put(12, "XX");
         hmap.put(17, "YY");
         hmap.put(2, "AB");
+        hmap.put(20, "XXZY");
         Set set = hmap.entrySet();
         Iterator iter = set.iterator();
         while(iter.hasNext()) {
@@ -31,6 +33,22 @@ public class HMap {
             Map.Entry mentry1 = (Map.Entry)iter1.next();
             System.out.println("Key is : " +mentry1.getKey() + ", Value :" + mentry1.getValue());
         
-    }
+            
+    } 
+        System.out.println("Set is now : " + hmap.containsKey(17));
+        System.out.println("Set is now : " + hmap.containsValue("XX"));//contains key of
+        System.out.println("Size is now : " + hmap.size());
+        
+        //clone
+        HashMap<Integer, String> hmap1 = new HashMap<Integer, String>();
+        hmap1.put(19, "XXY");
+        hmap1.putAll(hmap);
+        System.out.println(hmap1);
+        
+        hmap.clear();
+        System.out.println("Set is now : " + hmap );
+        
+        
+    
 }
 }
